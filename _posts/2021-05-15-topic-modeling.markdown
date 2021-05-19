@@ -109,7 +109,7 @@ This word cloud shown as like below:
 ![cluster 1 when the number of cluster was 2](/assets/WeChat816f864d2664d37647b0238e72773fbe.png)
 
 
-That's it, looked good. Work almost done here, but the effectiveness of kmeans algorithm largely depends on initial cluster number, that's say you want to set data into 2 or 6 clusters. It deserved to make more experiments to compare the results. In order to make it easier, we wrap this process as a function:
+That's it, it looked good. Work almost done here, but the effectiveness of kmeans algorithm largely depends on initial cluster number, that's say you want to set data into 2 or 6 clusters. It deserved to make more experiments to compare the results. In order to make it easier, we wrap this process as a function:
 ```python
 def identify_topics(df, desc_matrix, num_clusters):
   km = KMeans(n_clusters=num_clusters)
@@ -118,7 +118,6 @@ def identify_topics(df, desc_matrix, num_clusters):
     tweets = {'Tweet': df["Clean_text"].tolist(), 'Cluster': clusters}
     frame = pd.DataFrame(tweets, index = [clusters])
     print(frame['Cluster'].value_counts())
-
 
     for cluster in range(num_clusters):
         cluster_words = ' '.join(text for text in frame[frame['Cluster'] == cluster]['Tweet'])
