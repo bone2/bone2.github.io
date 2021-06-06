@@ -70,6 +70,7 @@ sklearn的feature selection中内置了一个SelectFromModel函数，它可以�
 >>> model = SelectFromModel(clf, prefit=True)
 >>> X_new = model.transform(X)
 ```
+
 ### Pipeline
 将特征选择融入到Pipeline中，作为学习之前的预处理。在sklearn中推荐使用sklearn.pipeline.Pipeline.
 ```python
@@ -80,5 +81,6 @@ clf = Pipeline([
 clf.fit(X, y)
 ```
 参考：
-https://www.cnblogs.com/stevenlk/p/6543628.html
-https://machinelearningmastery.com/feature-selection-machine-learning-python/
+[https://scikit-learn.org/stable/modules/feature_selection.html](https://scikit-learn.org/stable/modules/feature_selection.html)
+[https://www.cnblogs.com/stevenlk/p/6543628.html](https://www.cnblogs.com/stevenlk/p/6543628.html)
+[https://machinelearningmastery.com/feature-selection-machine-learning-python/](https://machinelearningmastery.com/feature-selection-machine-learning-python/)
